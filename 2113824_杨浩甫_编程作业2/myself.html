@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>个人信息</h1>
+        <p>专业：计算机学科与技术</p>
+        <p>学号：2113824</p>
+        <p>姓名：杨浩甫</p>
+        
+        <h2>音频</h2>
+        <div class="audio-container">
+            <audio id="myAudio" controls>
+                <source src="src/music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <button id="play-button" onclick="playAudio()">播放</button>
+            <button id="pause-button" onclick="pauseAudio()">暂停</button>
+        </div>
+
+        <h3>LOGO</h2>
+        <img src="src\ji.png" alt="MYLOGO" class="logo">        
+    </div>
+    
+    <script>
+        const audio = document.getElementById("myAudio");
+        const progressBar = document.getElementById("progress-bar");
+    
+        audio.addEventListener("timeupdate", updateProgressBar);
+    
+        function updateProgressBar() {
+            const currentTime = audio.currentTime;
+            const duration = audio.duration;
+            const percentage = (currentTime / duration) * 100;
+            progressBar.style.width = percentage + "%";
+        }
+    
+        function playAudio() {
+            audio.play();
+            document.getElementById("play-button").style.display = "none";
+            document.getElementById("pause-button").style.display = "block";
+        }
+    
+        function pauseAudio() {
+            audio.pause();
+            document.getElementById("pause-button").style.display = "none";
+            document.getElementById("play-button").style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/* 设置页面背景颜色和字体样式 */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 缩小LOGO图像 */
+.logo {
+    max-width: 300px; /* 根据需要调整图像的最大宽度 */
+    height: auto;
+}
+
+/* 设置标题的样式 */
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+h2 {
+    background-color: #1db4be;
+    color: #fff;
+    padding: 10px;
+}
+
+h3 {
+    background-color: #393ecd;
+    color: #fff;
+    padding: 10px;
+}
+
+/* 设置文本信息的样式 */
+p {
+    font-size: 16px;
+    margin: 10px;
+}
+
+/* 设置自我介绍部分的样式 */
+.audio-container {
+    margin: 10px;
+}
+
+/* 设置进度条容器的样式 */
+.progress-container {
+    width: 100%;
+    background-color: #ccc;
+    height: 5px;
+    position: relative;
+}
+
+/* 设置进度条的样式 */
+.progress-bar {
+    height: 100%;
+    background-color: #007BFF;
+    width: 0;
+    transition: width 0.1s;
+}
+
+/* 隐藏默认控件 */
+audio {
+    display: none;
+}
+
+/* 自定义播放按钮 */
+#play-button::before {
+    content: "\25B6";
+    font-size: 20px;
+}
+
+/* 自定义暂停按钮 */
+#pause-button::before {
+    content: "\2759";
+    font-size: 20px;
+}
